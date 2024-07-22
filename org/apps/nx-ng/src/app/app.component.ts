@@ -6,7 +6,7 @@ import { CodingSuggestionsComponent } from './coding-suggestions/coding-suggesti
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, D3CircleComponent, CodingSuggestionsComponent], // Add CodingSuggestionsComponent here
+  imports: [RouterModule, D3CircleComponent, CodingSuggestionsComponent, NxWelcomeComponent], // Add CodingSuggestionsComponent here
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
