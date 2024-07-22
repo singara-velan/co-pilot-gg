@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "target": "es2015",
+    "types": [
+      "cypress"
+    ]
+  },
+  "files": [
+    "src/integrations/app.spec.ts",
+    "src/support/commands.ts"
+  ],
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/node_modules"
+  ]
+}

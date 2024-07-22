@@ -1,0 +1,11 @@
+<form [formGroup]="codingSuggestionsForm" (ngSubmit)="onSubmit()">
+  <div>
+	<label for="noOfDataPoints">Number of Data Points</label>
+	<input id="noOfDataPoints" type="text" formControlName="noOfDataPoints">
+	<!-- Display error message if noOfDataPoints field is touched and not valid -->
+	<div *ngIf="codingSuggestionsForm.get('noOfDataPoints')?.touched && codingSuggestionsForm.get('noOfDataPoints')?.invalid">
+	  Number of Data Points is required.
+	</div>
+  </div>
+  <button type="submit" [disabled]="codingSuggestionsForm.invalid">Submit</button>
+</form>
