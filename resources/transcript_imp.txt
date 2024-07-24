@@ -1,0 +1,55 @@
+Introduction
+
+Hi everyone! Today, I'll be sharing what I know about GitHub Copilot, a powerful AI tool designed to assist you with coding.
+
+What is GitHub Copilot?
+
+Copilot is an AI model specifically trained to help with coding tasks. It's believed to be based on OpenAI Codex (similar to GPT-3), but the exact version details are not publicly available. Developed by GitHub, OpenAI, and Microsoft, Copilot boasts a context length of around 8,000 characters, allowing it to understand your coding needs effectively.
+
+In simpler terms, Copilot acts as your AI coding partner, offering more advanced assistance than traditional IDE features like autocompletion and code generators. Trained on a massive dataset of public repositories, Copilot understands context, generates boilerplate code, suggests test cases, and ultimately boosts your coding productivity.
+
+Getting Started
+
+To use Copilot, you'll need two things: a subscription and a compatible IDE. While Copilot isn't free, they offer a 30-day free trial for the individual plan, which is a great place to start. During signup, you'll encounter a preference page with two key options:
+
+Public Code Matching: This feature checks if suggested code snippets appear in public GitHub repositories and provides links for transparency and licensing purposes.
+Privacy & Data Security: Officially, GitHub states that for business and enterprise plans, your code won't be used to train the model. However, the details on individual plan data usage aren't entirely clear. To be cautious, I recommend using Copilot on your personal laptop to avoid any potential privacy concerns.
+For this presentation, I'll be using video clips captured from my personal laptop demonstrating Copilot's features.
+
+Key Features
+
+Once you have Copilot set up with an active subscription, it seamlessly integrates with your IDE, supercharging your coding experience. Here are some of its key features:
+
+Code Completion: Copilot offers two ways to complete your code:
+
+Autocompletion: Similar to traditional autocompletion, suggestions appear as you type.
+Comment-based Completion: Describe the desired function in natural language, and Copilot will suggest code snippets.
+Copilot Chat: This feature allows you to interact with Copilot conversationally. There are two ways to access it:
+
+Inline Chat: Use Ctrl + I to open a prompt box where you can type your questions or requests.
+Chat View: Open the dedicated chat interface using Ctrl + Alt + I or the Copilot icon. This interface resembles familiar chat tools like GPT-3.
+Public Code Referencing: When suggesting code, Copilot checks if it exists in a publicly available GitHub repository. If so, it provides a link to the repository for transparency.
+
+Slash Commands: Copilot offers slash commands (like /fix or /explain) to specify your intent without lengthy prompts. These commands work across different participants within the chat interface.
+
+Exploring Features with Examples
+
+Let's delve into some examples to showcase Copilot's capabilities:
+
+Code Completion: We'll see how Copilot suggests code definitions and adapts based on context (e.g., suggesting a random string after a random number function).
+Copilot Chat: We'll use Copilot chat to generate code, fix errors, and get explanations. We'll explore workspace context and chat variables for more specific interactions.
+Slash Commands: We'll demonstrate how slash commands like /fix, /explain, /tests, /new, and /doc can streamline your workflow.
+Advanced Usage:
+
+Test Case Generation: We'll witness Copilot generate test cases for selected methods or even entire files.
+Code Migration: We'll explore how Copilot can translate code functionality between different programming languages.
+Conclusion
+
+GitHub Copilot is a powerful tool that can significantly enhance your coding experience. By understanding its features and functionalities, you can leverage its capabilities to boost your productivity and write better code.
+
+Additional Notes:
+
+Consider your audience's technical background when tailoring the level of detail.
+Include visuals like screenshots or live demos for better understanding.
+Briefly explain code snippets, especially for those unfamiliar with the programming language being used.
+I hope this improved script provides a clearer and more engaging presentation outline for your audience!

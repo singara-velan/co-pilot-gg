@@ -1,0 +1,69 @@
+
+Hello everyone, today session going be a little sharing about GitHub copilot. I hope everybody already know what is copilot is. but just for context i start with the brief of what it is
+
+Its an AI model trained specifically for coding use cases. The initial version seems to be built based on open AI codex model(gpt3). But i didn't find any official documentation current version of it. If we check their official pages, they say its developed by GitHub, open ai & Microsoft without any specific model name or version number.
+
+The AI model seems to have context length 8k, this is based on of their release notes.
+
+In simple words, its been promoted as "Ai Pair Programmer" or more like coding assistance tool. Modern IDEs already have fair bit of coding assistance like syntax autocomplete, auto import, code generators, in vs code we can install framework specific extensions, which will give some level frameworks specific assistance. 
+
+But copilot is next level assistance tool. It trained on huge of public repositories. it can understands context, generate boiler plate codes, it can generate test case, in a way it can help improves productivity.
+
+With this lets see how to get start. We need 2 things, subscription and IDE. Yes copilot is not free. but they do provided 30 days free trail for individual plan. That's the one i am using it. Its a comparison table of what each subscription offers, as we look at his individual plan only got 5 features. But its quite good enough to start.
+
+Interms of IDE, they support few, but i used primarily vs code. Subscribing is a quite straight forward, we need to sign up using GitHub account and have to fill up the billing details. then you will be redirected to a preference page. i added this because wanted highlight 2 things. 
+
+first one, public code matching, jz keep in mind, i have separate slide later on what it actually does.
+second one, is related  to privacy & data security. whether do we wanna allow GitHub to collect our usage data.
+
+Speaking of privacy & data security, officially they says, if you are business & enterprise plan, they wont be using our code to train their model. Also there is statement about how do they actually handles usage data. It officially says prompts and suggestion not retained for the business and enterprise
+
+But the thing is i didn't find any  clear statements about individual plans. i am not 100% sure what they do with the our code and prompts. so i decided to use only my personal laptop. Don't want to breach any AON ai policies or indirectly exposing code. 
+
+For todays presentation, video format. which is nothing but small small clips captured from my personal laptop.
+
+Once we have successfully signed up, next will be setting up the ide. which is straight forward as well. We need to install the extension "git hub copilot". let see a small demo. Once you installed it will ask you sign in. sign in with same GitHub account and grant access. Then in the bottom right you will be able to see "copilot" icon. if you click on it, it show the status as "Ready".
+
+This one is just place holder slide, i put it because it looked nice!
+
+Now the remaining presentation gonna be learning basic feature of copilot through mini sample. These are all the topic i planning to cover.
+
+Lets start with how do we actually start using copilot? Once you have copilot extension with active subscription, it supercharges your ide. you will see instant improvement in code suggestions. The second one is copilot chat, this is like custom chat gpt inside of vscode. we will learn more on this as we go along.
+
+i am gonna start with the simple feature code completions. There are two ways for it, auto complete works similar regular auto complete, as we type the code it will provide suggestion. second one is via comments, here we can literally describe about the function in the natural language, it will give code snippet.
+
+Lets take a loot at example. i am trying to create random number function, as i type the function name, it suggest the definition of it. we can jz press tab to accept the suggestion. now once i press enter, we can see little bit of context aware behaviour here. as the previous method is random number, it suggest we may interested in random string. press tab to accept the suggestion.
+
+second example, here i am gonna type as comment, saying create method random number, then press enter. sometimes it will take a few seconds.
+now if i want a random number to be generated for a given range. lets add little bit of complexity here, specific 1 to 10 . If you take the closer look, i mentioned "page load", it understands its angular component, it suggested ngOnInit() with the previously created method with the given range 1 to 10 in the comments. This is another example of "context aware suggestions"
+
+public code referencing, this is the one i was showing in the subscription preference page. When Copilot suggests a code snippet, it checks if that code  appears in any publicly available GitHub repository. it will give link to the repository. This feature mainly seems to bring transparency on the origin of the code and licensing of the code.
+
+the public reference appears in the log, lets open the log first.
+
+Next Copilot chat. there are two ways to interact conversationally with copilot. let me start with inline chat first. to invoke it. ctrl + i. then prompt box will open up. i am typing the same prompt as last one here. lets take loot at the suggestion here. its lot more wholesmae. what i mean it implements lifecycle, is it perfect actually not. the best practice should be like return the random number, the error highlited on these variables, will cover in the subsequent slides. 
+
+now lets jump into the chat view, the familiar chat gpt style interface. you can open ctrl + alt + i, or else through this copilot icon. i am gonna type the same prompt here. now take a look at this response. its way more refined code. its even added the random number in the template. the file reference you see here is the "context" of the chat. by default all the opened tabs in the editor will be part of the context. there are few ways to get snippet into the code. apply in editor, copy, insert into new file or terminal
+
+let me open the demo first. you see this variable with error, if you click on the quick fix, you see 2 options from copilot fix & explain. this like quick short cut to create the prompt. this specific two smart actions "/fix" & "/explain" is part of broader group called "slash commands". i will explain that in a bit. lets take a look at the "/explain" as the name implies, it really explains lot with suggestions. the thing i wanna highlight here is, it suggests the practice to fix.
+
+now take a look at the prompt. there is something new called "@workspace"
+anything starts with @ is chart participants, the second is self explanatory slash commands. lets focus on the chart participants first, its been called as "domain expert", its specialized in doing certain things. in a way this chart participants define the context for the prompt. on the previous example, i mentioned like 
+
+lets take a look at this sample here. you see here there is no opened files. now if we ask the same prompt with like @workspace. lets open the demo. Some cases @workspace too big of context. if like to ask something about specific file or specific section of code, this chat variables comes in handy. lets take a look at the demo. starting with simple prompt. there is no file opened. so the response. now lets open component.ts file ask the same question it able to understand. #file select the file . 
+
+this one about simple of example different type of chart participant. it gives instruction about.
+
+now we back to the original prompt, the second part is called as slash commands. which helps to set the intent, without typing the long query. when we say /fix /explain copilot what is expected out of it. there are quite few slash commands work across different participants. we have already seen sample of /fix & /explain. i will be walking through /tests, /new /doc
+
+lets start with doc. invoking the prompt window ctrl+ i. it generates quite nicely. for test i have two samples here. one is to generate and another one is expand the coverage. to begin with lets use the inline chat, it suggest the test for the selected method. its rightfully suggest to place it in the spec file. but its not full test case. it missing dependency. the alternative which i find quite good is, ask for the test in the file level. its generate from the import statement, component mock and test cases for all the methods. lets try to run this. see it all passes. now we can take this even further. it has 6 test cases, now i am going to ask to expand, which means it should add more edge criteria. let apply this and run it. now see one failed. so it helps discovered on failure point.
+
+/new is for scaffolding. which is nothing but creating skeleton project. this simple trying to create nx workspace with angular. it will show the workspace structure ask as to select the folder. once its created vs code will switch the particular workspace context. it generated with the angular version 12. it bit old, i tried with latest version, its blocked my prompt. i put this here, jz to it can block you totally as well. next i tried scaffolding a c# rest api, its not quite complete, it was missing csproject. generated output is not really runnable. its better to create scaffolding with native cli. but i have tried creating test.
+
+this is another way to interact with copilot. this time on the terminal
+
+this is one of the simplified version of real example. the background is we invoke some apis via powershell on wherscape redshift. Then we have to migrate that to data bricks. where python is preferred. so this kind of you want same functionalities writer different programming language, AI tools comes in quite handy.
+
+
+
+
