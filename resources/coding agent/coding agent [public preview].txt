@@ -1,0 +1,57 @@
+- coding agent [public preview]
+- what is agent?
+- how GitHub coding agent different from chat
+- what is the dev workflow -> rise ticket, assign, review & merge
+- sample tickets
+- GCA pull request
+  - can assign
+  - initial story
+  - how it works
+  - playwright and attachment
+  - only copilot branch. doesn't touch any other branches
+  - always checks out from the main branch
+  - respond to comments by reviewers with write access
+- AI Code Reviewer
+  - custom rules
+  - can be configured to auto review
+  - can't ask to fix its own findings
+  - manual request for re-reviewed required.
+- Best Practices
+  - configure coding instructions
+  - configure dev environment
+
+MCP server?
+internal details
+cost benefit analysis?
+
+- starts work in the background
+- boots a VM, clone repository, configures the environment, analyze code using Retrieval Augmented Search
+- updates the PR and description
+- Developers to have their agent driven team
+- high value coding tasks
+- 
+
+Agent Mode
+ -  Realtime Collaborator. sits in IDE. interact and works directly passed on given query & context
+
+Coding Agent
+- independent agent, takes on issue, works independently sends PR
+
+examples
+- incremental change
+- new component based on existing (scaling)
+- angular upgrade
+- wording changes
+- 
+
+takeaways
+- quality depends on underlaying model & how descriptive & specificity of the prompts. Yes. Need to learn prompt engineering
+- repetitive tasks, which has references does quite well
+
+closing thoughts
+- mvp
+- po/do -> lead devs -> junior devs/gradutes/inters
+-> coding agents
+-> 
+
+
